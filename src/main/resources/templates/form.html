@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Input Mahasiswa</title>
+    <style>
+        body {
+            background-color: #e3f2fd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(144, 202, 249, 0.3);
+            width: 350px;
+        }
+        h3 { color: #90caf9; text-align: center; }
+        label { font-weight: bold; color: #78909c; }
+        input[type="text"] {
+            width: 93%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #e3f2fd;
+            border-radius: 12px;
+            outline: none;
+        }
+        input[type="text"]:focus { border-color: #bbdefb; }
+        .radio-group { margin: 15px 0; color: #78909c; }
+        button {
+            width: 100%;
+            background-color: #90caf9;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #64b5f6; }
+        .back-link {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #90caf9;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<div class="form-card">
+    <h3>Form Input Mahasiswa</h3>
+    <form th:action="@{/save}" th:object="${user}" method="post">
+        <label>Nama:</label><br>
+        <input type="text" th:field="*{nama}" required><br><br>
+
+        <label>NIM:</label><br>
+        <input type="text" th:field="*{nim}" required><br><br>
+
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+            <input type="radio" th:field="*{jenisKelamin}" value="Laki-laki"> Laki-laki
+            <input type="radio" th:field="*{jenisKelamin}" value="Perempuan"> Perempuan
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<a class="back-link" th:href="@{/home}">← Kembali ke Home</a>
+</body>
+</html>
