@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #e3f2fd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            color: #5d8aa8;
+        }
+        h1 { color: #64b5f6; text-shadow: 1px 1px 2px white; }
+        .nav-links { margin-bottom: 20px; }
+        a {
+            text-decoration: none;
+            color: #90caf9;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background: white;
+            transition: 0.3s;
+        }
+        a:hover { background: #bbdefb; color: white; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        th {
+            background-color: #bbdefb;
+            color: #5d8aa8;
+            padding: 15px;
+        }
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e3f2fd;
+        }
+        tr:hover { background-color: #f1f8ff; }
+    </style>
+</head>
+<body>
+<h1>MY Website 20230140015</h1>
+<p>Selamat datang di aplikasi!</p>
+
+<div class="nav-links">
+    <a th:href="@{/form}">Input Data Mahasiswa</a> |
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<h3>Data Mahasiswa</h3>
+<table>
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>NIM</th>
+        <th>Jenis Kelamin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${dataMhs.empty}">
+        <td colspan="4">Belum ada data</td>
+    </tr>
+    <tr th:each="mhs, iterStat : ${dataMhs}">
+        <td th:text="${iterStat.count}"></td>
+        <td th:text="${mhs.nama}"></td>
+        <td th:text="${mhs.nim}"></td>
+        <td th:text="${mhs.jenisKelamin}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
