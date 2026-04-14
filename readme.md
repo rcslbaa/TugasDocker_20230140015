@@ -1,7 +1,7 @@
-# IMAGE DOCKER DEKSTOP
+# IMAGE DOCKER DEKSTOP SETELAH PUSH IMAGE
 <img width="1920" height="1200" alt="Screenshot 2026-04-14 154019" src="https://github.com/user-attachments/assets/5606a818-a5db-435a-9b4a-ed556b0ec736" />
 
-# CONTAINER DOCKER DESKTOP
+# CONTAINER DOCKER DESKTOP SETALAH PUSH CONTAINER
 <img width="1920" height="1200" alt="Screenshot 2026-04-14 154210" src="https://github.com/user-attachments/assets/94287748-1ac5-4e03-8617-fb8ffcdd99da" />
 
 # HALAMAN WEB SENDIRI
