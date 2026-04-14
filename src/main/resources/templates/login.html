@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #e3f2fd; /* Biru Pastel sangat muda */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(173, 216, 230, 0.4);
+            width: 300px;
+            text-align: center;
+        }
+        h2 { color: #90caf9; margin-bottom: 1.5rem; }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #bbdefb;
+            border-radius: 10px;
+            outline: none;
+        }
+        input:focus { border-color: #90caf9; }
+        button {
+            background-color: #90caf9;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #64b5f6; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Login Page</h2>
+    <form th:action="@{/login}" method="post">
+        <label>Username</label>
+        <input type="text" name="username" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>
